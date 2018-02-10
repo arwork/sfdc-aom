@@ -1,0 +1,85 @@
+﻿@using CustomLogic
+@model IEnumerable<CustomLogic.AomObject>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <h2>Create</h2>
+    <ul class="nav navbar-nav">
+        @foreach (AomMeta item in ViewBag.AomMetas)
+        {
+            <li>@Html.ActionLink(item.Name, "Create", "AomObjects", new { id = item.Id }, null)</li>
+        }
+    </ul>
+</div>
+
+
+
+<div class="row">
+    <h2>Limiting Table</h2>
+    <ul class="nav navbar-nav">
+        @foreach (AomMeta item in ViewBag.AomMetas)
+        {
+            <li>@Html.ActionLink(item.Name, "Index", "AomObjects", new { id = item.Id }, null)</li>
+        }
+    </ul>
+ 
+    <form action="@Html.Raw("/AomObjects/index/" + ViewBag.ObjectType)" method="get">
+        <input id="query" name="query" maxlength="100" type="text" value="@Html.Raw(ViewBag.query)"/>
+        <input type="submit" id="submit" value="Search" />
+    </form>
+</div>
+
+
+<div>Total records = @Html.ViewBag.TotalRecords</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AomMetaId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AomMeta.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AomMetaId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AomMeta.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @foreach (var innerItem in item.AomFieldObjects)
+                {
+                    <div>
+                        @Html.DisplayFor(modelInnerItem => innerItem.Value)
+                    </div>
+                }
+
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

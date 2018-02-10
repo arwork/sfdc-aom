@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{740AAB8B-8AC3-4B26-B5A4-EF5010965349}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CustomLogic</RootNamespace>
+    <AssemblyName>CustomLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AomDbContext.cs">
+      <DependentUpon>AOMContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Helpers\Extentions.cs" />
+    <Compile Include="CustomDbContext.cs" />
+    <Compile Include="Core\BaseClasses\EntityModelBase.cs" />
+    <Compile Include="Core\BaseClasses\ServiceBase.cs" />
+    <Compile Include="Core\Database\DbContext.cs" />
+    <Compile Include="Core\Helpers\InterfaceLoader.cs" />
+    <Compile Include="Core\Interfaces\BL\IDeleteRule.cs" />
+    <Compile Include="Core\Interfaces\BL\IInsertRule.cs" />
+    <Compile Include="Core\Interfaces\BL\IUpdateRule.cs" />
+    <Compile Include="Core\Interfaces\BL\IViewListRule.cs" />
+    <Compile Include="Core\Interfaces\BL\IViewRule.cs" />
+    <Compile Include="Core\Interfaces\DL\IDeleteEvent.cs" />
+    <Compile Include="Core\Interfaces\DL\IInsertEvent.cs" />
+    <Compile Include="Core\Interfaces\DL\IUpdateEvent.cs" />
+    <Compile Include="Core\Interfaces\DL\IViewEvent.cs" />
+    <Compile Include="Core\Interfaces\DL\IViewListEvent.cs" />
+    <Compile Include="Core\Interfaces\ICoreUser.cs" />
+    <Compile Include="Core\Interfaces\IService.cs" />
+    <Compile Include="Core\Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Core\Models\NgTable.cs" />
+    <Compile Include="Core\Models\NgTableParams.cs" />
+    <Compile Include="Core\Models\QueryToNgTable.cs" />
+    <Compile Include="Core\Models\Response.cs" />
+    <Compile Include="AOMContext.cs">
+      <DependentUpon>AOMContext.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="AomFieldMeta.cs">
+      <DependentUpon>AOMContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AomFieldMetaMap.cs">
+      <DependentUpon>AOMContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AomFieldObject.cs">
+      <DependentUpon>AOMContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AomFieldObjectMap.cs">
+      <DependentUpon>AOMContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AomMeta.cs">
+      <DependentUpon>AOMContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AomMetaMap.cs">
+      <DependentUpon>AOMContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AomObject.cs">
+      <DependentUpon>AOMContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AomObjectMap.cs">
+      <DependentUpon>AOMContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomAomFieldObject.cs" />
+    <Compile Include="CustomAomObject.cs" />
+    <Compile Include="FakeAomDbContext.cs">
+      <DependentUpon>AOMContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FakeDbSet.cs">
+      <DependentUpon>AOMContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FieldType.cs">
+      <DependentUpon>AOMContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FieldTypeMap.cs">
+      <DependentUpon>AOMContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IAomDbContext.cs">
+      <DependentUpon>AOMContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707132035027_InitialMigration.cs" />
+    <Compile Include="Migrations\201707132035027_InitialMigration.Designer.cs">
+      <DependentUpon>201707132035027_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709191911024_Initial.cs" />
+    <Compile Include="Migrations\201709191911024_Initial.Designer.cs">
+      <DependentUpon>201709191911024_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RelationshipMeta.cs">
+      <DependentUpon>AOMContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RelationshipMetaMap.cs">
+      <DependentUpon>AOMContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RelationshipObject.cs">
+      <DependentUpon>AOMContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RelationshipObjectMap.cs">
+      <DependentUpon>AOMContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AomFieldMetaService\CastlesDeleteLogic.cs" />
+    <Compile Include="Services\AomFieldMetaService\CastlesInsertLogic.cs" />
+    <Compile Include="Services\AomFieldMetaService\CastlesMapper.cs" />
+    <Compile Include="Services\AomFieldMetaService\CastlesQueryLogic.cs" />
+    <Compile Include="Services\AomFieldMetaService\CastlesQueryRule.cs" />
+    <Compile Include="Services\AomFieldMetaService\CastlesService.cs" />
+    <Compile Include="Services\AomFieldMetaService\CastlesUpdateLogic.cs" />
+    <Compile Include="Services\AomFieldMetaService\CastlesViewLogic.cs" />
+    <Compile Include="Services\AomFieldMetaService\CastlesVm.cs" />
+    <Compile Include="Services\AomFieldObjectService\CastlesDeleteLogic.cs" />
+    <Compile Include="Services\AomFieldObjectService\CastlesInsertLogic.cs" />
+    <Compile Include="Services\AomFieldObjectService\CastlesMapper.cs" />
+    <Compile Include="Services\AomFieldObjectService\CastlesQueryLogic.cs" />
+    <Compile Include="Services\AomFieldObjectService\CastlesQueryRule.cs" />
+    <Compile Include="Services\AomFieldObjectService\CastlesService.cs" />
+    <Compile Include="Services\AomFieldObjectService\CastlesUpdateLogic.cs" />
+    <Compile Include="Services\AomFieldObjectService\CastlesViewLogic.cs" />
+    <Compile Include="Services\AomFieldObjectService\CastlesVm.cs" />
+    <Compile Include="Services\AOMMetaCreatorService\Models\FieldInformation.cs" />
+    <Compile Include="Services\AOMMetaCreatorService\Interfaces\ICrmConnector.cs" />
+    <Compile Include="Services\AOMMetaCreatorService\Models\RelationshipInformation.cs" />
+    <Compile Include="Services\AOMMetaCreatorService\Models\TableInfo.cs" />
+    <Compile Include="Services\AomMetaService\CastlesDeleteLogic.cs" />
+    <Compile Include="Services\AomMetaService\CastlesInsertLogic.cs" />
+    <Compile Include="Services\AomMetaService\CastlesMapper.cs" />
+    <Compile Include="Services\AomMetaService\CastlesQueryLogic.cs" />
+    <Compile Include="Services\AomMetaService\CastlesQueryRule.cs" />
+    <Compile Include="Services\AomMetaService\CastlesService.cs" />
+    <Compile Include="Services\AomMetaService\CastlesUpdateLogic.cs" />
+    <Compile Include="Services\AomMetaService\CastlesViewLogic.cs" />
+    <Compile Include="Services\AomMetaService\CastlesVm.cs" />
+    <Compile Include="Services\AOMMetaCreatorService\AOMMetaCreatorService.cs" />
+    <Compile Include="Services\AOMMetaCreatorService\Connectors\SalesforceConnector.cs" />
+    <Compile Include="Web References\sforce\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Core\ReadMe.txt" />
+    <Content Include="AOMContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AOMContext.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EF.Reverse.POCO.Core.ttinclude" />
+    <None Include="EF.Reverse.POCO.ttinclude" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\sforce\ChangeOwnPasswordResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\DeleteResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\DescribeAppMenuItem.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\DescribeApprovalLayout.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\DescribeAvailableQuickActionResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\DescribeCompactLayout.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\DescribeCompactLayoutsResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\DescribeDataCategoryGroupResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\DescribeDataCategoryGroupStructureResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\DescribeGlobalResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\DescribeGlobalTheme.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\DescribeLayoutResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\DescribeNounResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\DescribePathAssistant.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\DescribeQuickActionResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\DescribeSearchableEntityResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\DescribeSearchLayoutResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\DescribeSearchScopeOrderResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\DescribeSObjectResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\DescribeSoftphoneLayoutResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\DescribeSoqlListView.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\DescribeTab.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\DescribeTabSetResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\DescribeThemeItem.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\DescribeVisualForceResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\EmptyRecycleBinResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\ExecuteListViewResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\FindDuplicatesResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\GetDeletedResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\GetServerTimestampResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\GetUpdatedResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\GetUserInfoResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\InvalidateSessionsResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\KnowledgeSettings.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\LeadConvertResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\LoginResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\MergeResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\PerformQuickActionResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\ProcessResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\QueryResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\QuickActionTemplateResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\sforce\RenderEmailTemplateResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\RenderStoredEmailTemplateResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\ResetPasswordResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\SaveResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\SearchResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\SendEmailResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\SetPasswordResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\sObject.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\UndeleteResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\UpsertResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\sforce\wsdl.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201707132035027_InitialMigration.resx">
+      <DependentUpon>201707132035027_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709191911024_Initial.resx">
+      <DependentUpon>201709191911024_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://eu11.salesforce.com/soap/wsdl.jsp">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\sforce\</RelPath>
+      <UpdateFromURL>https://eu11.salesforce.com/soap/wsdl.jsp</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CustomLogic_sforce_SforceService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

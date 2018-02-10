@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomLogic", "CustomLogic\CustomLogic.csproj", "{740AAB8B-8AC3-4B26-B5A4-EF5010965349}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aom.Mvc", "Aom.Mvc\Aom.Mvc.csproj", "{3D0105BB-1A08-4885-8A8E-E8549CE2DC67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomLogic.Tests", "CustomLogic.Tests\CustomLogic.Tests.csproj", "{79B2897C-3C33-4A33-B21D-93370A3AADE3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{740AAB8B-8AC3-4B26-B5A4-EF5010965349}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{740AAB8B-8AC3-4B26-B5A4-EF5010965349}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{740AAB8B-8AC3-4B26-B5A4-EF5010965349}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{740AAB8B-8AC3-4B26-B5A4-EF5010965349}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D0105BB-1A08-4885-8A8E-E8549CE2DC67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D0105BB-1A08-4885-8A8E-E8549CE2DC67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D0105BB-1A08-4885-8A8E-E8549CE2DC67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D0105BB-1A08-4885-8A8E-E8549CE2DC67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79B2897C-3C33-4A33-B21D-93370A3AADE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79B2897C-3C33-4A33-B21D-93370A3AADE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79B2897C-3C33-4A33-B21D-93370A3AADE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79B2897C-3C33-4A33-B21D-93370A3AADE3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

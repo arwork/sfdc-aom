@@ -1,0 +1,73 @@
+﻿@using System.Collections
+@model CustomLogic.AomObject
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create @Html.DisplayFor(model => model.AomMeta.Name)</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Creat new @Html.DisplayFor(model=>model.AomMeta.Name)</h4>
+        <hr />
+        
+
+        @Html.HiddenFor(model => model.AomMetaId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+                    @for (var counter = 0; counter < Model.AomFieldObjects.Count(); counter++)
+                    {
+                        <div class="form-group">
+                            <div class="control-label col-md-2">@Html.DisplayFor(x => Model.AomFieldObjects[counter].AomFieldMeta.Name)</div>
+                            <div class="col-md-10">
+                                
+                                @Html.HiddenFor(modelItem => Model.AomFieldObjects[counter].AomFieldMetaId)
+                                @Html.HiddenFor(modelItem => Model.AomFieldObjects[counter].AomObjectId)
+
+                                @if (!Model.AomFieldObjects[counter].AomFieldMeta.Name.Contains("Id") && Model.AomFieldObjects[counter].AomFieldMeta.Name != "Id")
+                                {
+                                    @Html.EditorFor(modelItem => Model.AomFieldObjects[counter].Value)
+                                }
+                                else
+                                {
+                                    if (ViewData[Model.AomFieldObjects[counter].AomFieldMeta.Name] != null)
+                                    {
+                                        @Html.DropDownList(Model.AomFieldObjects[counter].AomFieldMeta.Name, new SelectList((IEnumerable)ViewData[Model.AomFieldObjects[counter].AomFieldMeta.Name], "Id", "Name"), new { htmlAttributes = new { @class = "form-control" } })
+                                    }
+                                    else
+                                    {
+                                        <div class="control-label col-md-2">No objects exist or relationsship not set up</div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    }
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Create" class="btn btn-default" />
+                        </div>
+                    </div>
+        </div>
+        }
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

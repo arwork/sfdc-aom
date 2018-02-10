@@ -1,0 +1,51 @@
+﻿@model CustomLogic.AomFieldMeta
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AomFieldMeta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AomMeta.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AomMeta.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FieldType.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FieldType.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Display)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Display)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

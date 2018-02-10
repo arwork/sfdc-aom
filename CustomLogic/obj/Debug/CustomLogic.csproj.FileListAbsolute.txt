@@ -1,0 +1,15 @@
+C:\Users\ChrisCastle\Documents\Visual Studio 2015\Projects\AOM\CustomLogic\bin\Debug\CustomLogic.dll.config
+C:\Users\ChrisCastle\Documents\Visual Studio 2015\Projects\AOM\CustomLogic\bin\Debug\CustomLogic.dll
+C:\Users\ChrisCastle\Documents\Visual Studio 2015\Projects\AOM\CustomLogic\bin\Debug\CustomLogic.pdb
+C:\Users\ChrisCastle\Documents\Visual Studio 2015\Projects\AOM\CustomLogic\bin\Debug\EntityFramework.dll
+C:\Users\ChrisCastle\Documents\Visual Studio 2015\Projects\AOM\CustomLogic\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ChrisCastle\Documents\Visual Studio 2015\Projects\AOM\CustomLogic\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ChrisCastle\Documents\Visual Studio 2015\Projects\AOM\CustomLogic\bin\Debug\EntityFramework.xml
+C:\Users\ChrisCastle\Documents\Visual Studio 2015\Projects\AOM\CustomLogic\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ChrisCastle\Documents\Visual Studio 2015\Projects\AOM\CustomLogic\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ChrisCastle\Documents\Visual Studio 2015\Projects\AOM\CustomLogic\obj\Debug\CustomLogic.csprojResolveAssemblyReference.cache
+C:\Users\ChrisCastle\Documents\Visual Studio 2015\Projects\AOM\CustomLogic\obj\Debug\CustomLogic.Migrations.InitialMigration.resources
+C:\Users\ChrisCastle\Documents\Visual Studio 2015\Projects\AOM\CustomLogic\obj\Debug\CustomLogic.Migrations.Initial.resources
+C:\Users\ChrisCastle\Documents\Visual Studio 2015\Projects\AOM\CustomLogic\obj\Debug\CustomLogic.csproj.GenerateResource.Cache
+C:\Users\ChrisCastle\Documents\Visual Studio 2015\Projects\AOM\CustomLogic\obj\Debug\CustomLogic.dll
+C:\Users\ChrisCastle\Documents\Visual Studio 2015\Projects\AOM\CustomLogic\obj\Debug\CustomLogic.pdb
